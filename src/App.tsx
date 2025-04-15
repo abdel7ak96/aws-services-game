@@ -1,5 +1,6 @@
 import Logo from "./assets/logo.png";
 import services from "./assets/data/services.json";
+import ServiceCircle from "./components/service-circle";
 
 function App() {
 	return (
@@ -30,9 +31,12 @@ function App() {
 						className="border border-gray-200 p-4 rounded-lg shadow-md"
 					>
 						<h5 className="text-2xl">{service.category}</h5>
-						{service.services.map((s) => (
-							<p key={s.id}>{s.name}</p>
-						))}
+						<div className="border-1 border-gray-100" />
+						<div className="grid grid-cols-3 xl:grid-cols-4 gap-4 mt-4">
+							{service.services.map((s) => (
+								<ServiceCircle key={s.id} category={service.category} {...s} />
+							))}
+						</div>
 					</div>
 				))}
 			</div>
