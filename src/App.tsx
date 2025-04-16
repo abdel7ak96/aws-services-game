@@ -1,5 +1,5 @@
 import Logo from "./assets/logo.png";
-import services from "./assets/data/services.json";
+import { servicesData } from "./constants/aws-services";
 import ServiceCircle from "./components/service-circle";
 
 function App() {
@@ -25,7 +25,7 @@ function App() {
 			</div>
 
 			<div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4 mt-10">
-				{services.map((service) => (
+				{servicesData.map((service) => (
 					<div
 						key={service.category}
 						className="border border-gray-200 p-4 rounded-lg shadow-md"
