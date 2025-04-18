@@ -6,17 +6,16 @@ const ServiceCircle: FC<Props> = ({ id, name, category, description }) => {
 	return (
 		<motion.div
 			className="flex flex-col items-center justify-center cursor-pointer"
-			// animate={{
+			// whileHover={{
 			// 	rotate: [5, -5, 5],
 			// 	x: [0.5, -0.5, 0.5],
-			//   y: [-0.5, 0.5, -0.5],
+			// 	y: [-0.5, 0.5, -0.5],
 			// }}
 			// transition={{
 			// 	repeat: Number.POSITIVE_INFINITY,
 			// 	repeatType: "loop",
 			// 	duration: 0.4,
 			// 	ease: "easeInOut",
-			// 	delay: Math.random() * 0.2, // To give each icon a slightly different jiggle
 			// }}
 		>
 			<Tooltip description={description}>

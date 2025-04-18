@@ -1,10 +1,11 @@
 import Logo from "./assets/logo.png";
 import { servicesData } from "./constants/aws-services";
 import ServiceCircle from "./components/service-circle";
+import FloatingCard from "./components/floating-card";
 
 function App() {
 	return (
-		<div className="p-10">
+		<div className="p-10 mb-[160px]">
 			<div className="flex items-center gap-x-4">
 				<img className="w-20" src={Logo} alt="Logo" />
 				<h1 className="text-4xl font-bold">AWS Cloud Services Game</h1>
@@ -40,6 +41,7 @@ function App() {
 					</div>
 				))}
 			</div>
+			<FloatingCard />
 		</div>
 	);
 }
