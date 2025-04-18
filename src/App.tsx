@@ -32,7 +32,7 @@ function App() {
 					>
 						<h5 className="text-2xl">{service.category}</h5>
 						<div className="border-1 border-gray-100" />
-						<div className="grid grid-cols-3 xl:grid-cols-4 gap-4 mt-4">
+						<div className="grid grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 items-start gap-4 mt-4">
 							{service.services.map((s) => (
 								<ServiceCircle key={s.id} category={service.category} {...s} />
 							))}
