@@ -2,8 +2,32 @@ import Logo from "./assets/logo.png";
 import { servicesData } from "./constants/aws-services";
 import ServiceCircle from "./components/service-circle";
 import FloatingCard from "./components/floating-card";
+import { useEffect, useMemo, useState } from "react";
 
 function App() {
+	const [services, setServices] = useState(servicesData);
+	const [randomService, setRandomService] =
+		useState<(typeof servicesData)[number]["services"][number]>();
+
+	const flatServices = useMemo(
+		() => services.flatMap((service) => service.services),
+		[services],
+	);
+
+	useEffect(() => {
+		const randomIndex = Math.floor(Math.random() * flatServices.length);
+		const randomService = flatServices[randomIndex];
+		setRandomService(randomService);
+	}, [flatServices]);
+
+	const handleServiceClick = (i: number, j: number) => {
+		if (services[i].services[j].id === randomService?.id) {
+			const newServices = [...services];
+			newServices[i].services.splice(j, 1);
+			setServices(newServices);
+		}
+	};
+
 	return (
 		<div className="p-10 mb-[160px]">
 			<div className="flex items-center gap-x-4">
@@ -26,7 +50,7 @@ function App() {
 			</div>
 
 			<div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4 mt-10">
-				{servicesData.map((service) => (
+				{services.map((service, i) => (
 					<div
 						key={service.category}
 						className="border border-gray-200 p-4 rounded-lg shadow-md"
@@ -34,14 +58,20 @@ function App() {
 						<h5 className="text-2xl">{service.category}</h5>
 						<div className="border-1 border-gray-100" />
 						<div className="grid grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 items-start gap-4 mt-4">
-							{service.services.map((s) => (
-								<ServiceCircle key={s.id} category={service.category} {...s} />
+							{service.services.map((s, j) => (
+								<div
+									key={s.id}
+									onClick={() => handleServiceClick(i, j)}
+									onKeyDown={(e) => e.key === "Enter" && handleServiceClick(i, j)}
+								>
+									<ServiceCircle category={service.category} {...s} />
+								</div>
 							))}
 						</div>
 					</div>
 				))}
 			</div>
-			<FloatingCard />
+			{randomService && <FloatingCard {...randomService} />}
 		</div>
 	);
 }
