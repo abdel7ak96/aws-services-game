@@ -35,13 +35,22 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: lts/*
-          cache: 'pnpm'
 
       - name: Install pnpm
         run: npm install -g pnpm
 
+      - name: Cache pnpm store
+        uses: actions/cache@v3
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
       - name: Install dependencies
         run: pnpm install
+        env:
+          PNPM_STORE_PATH: ~/.pnpm-store
 
       - name: Build
         run: pnpm run build
