@@ -23,19 +23,19 @@ export const servicesData: Category[] = [
 				id: "Lake-Formation",
 				name: "Lake Formation",
 				description:
-					"A managed service that makes it easy to set up, secure, and manage your data lakes. It helps you discover your data sources and then catalog, cleanse, and transform the data. You can useit to secure the data and ingest it into an Amazon Simple Storage Service (Amazon S3) data lake.",
+					"A fully managed service used to build, manage, and secure data lakes in days, so you can confidently share data across your organization.",
 			},
 			{
 				id: "OpenSearch-Service",
 				name: "Open Search",
 				description:
-					"A managed service that makes it easy to deploy, operate, and scale OpenSearch, a popular open-source search and analytics engine. OpenSearch Service also offers security options, high availability, data durability, and direct access to the OpenSearch API.",
+					"A managed service that makes it easy to deploy, operate, and scale OpenSearch, a popular open-source search and analytics engine. It also offers security options, high availability, data durability, and direct access to the OpenSearch API.",
 			},
 			{
 				id: "Athena",
 				name: "Athena",
 				description:
-					"An interactive query service that makes it easy to analyze data in Amazon S3 using standard SQL. Athena is serverless, so there is no infrastructure to setup or manage, and you pay only for the queries you run. To get started, simply point to your data in S3, define the schema, and start querying using standard SQL.",
+					"An interactive query service that makes it easy to analyze data in Amazon S3 using standard SQL. It is serverless, so there is no infrastructure to setup or manage, and you pay only for the queries you run.",
 			},
 			{
 				id: "QuickSight",
@@ -47,7 +47,7 @@ export const servicesData: Category[] = [
 				id: "Kinesis",
 				name: "Kinesis",
 				description:
-					"A service makes it easy to collect, process, and analyze video and data streams in real time.",
+					"A service to collect streaming data, create a real-time data pipeline, and analyze real-time video and data streams, log analytics, event analytics, and IoT analytics.",
 			},
 			{
 				id: "Glue",
@@ -59,13 +59,13 @@ export const servicesData: Category[] = [
 				id: "Redshift",
 				name: "Redshift",
 				description:
-					"a fast, fully managed, petabyte-scale data warehouse service that makes it simple and cost-effective to efficiently analyze all your data using your existing business intelligence tools. It is optimized for datasets ranging from a few hundred gigabytes to a petabyte or more and costs less than $1,000 per terabyte per year, a tenth the cost of most traditional data warehousing solutions.",
+					"A fast, fully managed, petabyte-scale data warehouse service that makes it simple and cost-effective to efficiently analyze all your data using your existing business intelligence tools. It is optimized for datasets ranging from a few hundred gigabytes to a petabyte or more and costs less than $1,000 per terabyte per year, a tenth the cost of most traditional data warehousing solutions.",
 			},
 			{
 				id: "EMR",
 				name: "EMR",
 				description:
-					"a web service that makes it easy to process vast amounts of data efficiently using Apache Hadoop and services offered by Amazon Web Services.",
+					"A cloud big data platform for running large-scale distributed data processing jobs, interactive SQL queries, and machine learning applications using open-source analytics frameworks such as Apache Spark, Apache Hive, and Presto.",
 			},
 		],
 	},
@@ -94,7 +94,7 @@ export const servicesData: Category[] = [
 				id: "EventBridge",
 				name: "Event Bridge",
 				description:
-					"A serverless event bus service that makes it easy to connect your applications with data from a variety of sources. EventBridge delivers a stream of real-time data from your own applications, software-as-a-service (SaaS) applications, and AWS services and routes that data to targets such as AWS Lambda. You can set up routing rules to determine where to send your data to build application architectures that react in real time to all of your data sources. EventBridge enables you to build event-driven architectures that are loosely coupled and distributed.",
+					"A serverless event bus that ingests data from your own apps, SaaS apps, and AWS services and routes that data to targets.",
 			},
 			{
 				id: "Step-Functions",
@@ -219,7 +219,7 @@ export const servicesData: Category[] = [
 			{
 				id: "Red-Hat-OpenShift-Service-on-AWS",
 				name: "ROSA",
-				description: "A service that uses SQL to analyze structured and semi-structured data across data warehouses, operational databases, and data lakes, using AWS-designed hardware and machine learning to deliver the best price performance at any scale.",
+				description: "A managed service that helps Red Hat OpenShift users to build, scale, and manage containerized applications on AWS.",
 			},
 		],
 	},
@@ -373,8 +373,8 @@ export const servicesData: Category[] = [
 			},
 			{
 				id: "Elastic-Block-Store",
-				name: "Amazon Elastic Block Store (EBS)",
-				description: "An easy to use, high-performance cloud Storage Area Network (SAN).",
+				name: "EBS",
+				description: "scalable, high-performance block-storage resources that you can use with your Amazon EC2 instances.",
 			},
 			{
 				id: "EFS",
