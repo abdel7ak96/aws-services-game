@@ -4,10 +4,13 @@ import ServiceCircle from "./components/service-circle";
 import FloatingCard from "./components/floating-card";
 import { useEffect, useMemo, useState } from "react";
 import Footer from "./components/footer";
+import useStore from "./store";
 
 function App() {
 	const [services, setServices] = useState(servicesData);
-	const [gameStarted, setGameStarted] = useState(false);
+	const gameStarted = useStore((state => state.startGame));
+	const toggleGameState = useStore((state) => state.toggleGameState);
+
 	const [randomService, setRandomService] =
 		useState<(typeof servicesData)[number]["services"][number]>();
 
@@ -45,11 +48,11 @@ function App() {
 
 				<div className="flex justify-center">
 					<button
-						className="btn btn-primary"
+						className={`btn ${gameStarted && "btn-soft"} btn-primary`}
 						type="button"
-						onClick={() => setGameStarted(true)}
+						onClick={toggleGameState}
 					>
-						Start Game
+						{gameStarted ? "Stop Game" : "Start Game" }
 					</button>
 				</div>
 
