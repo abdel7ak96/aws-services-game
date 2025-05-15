@@ -104,7 +104,7 @@ export const servicesData: Category[] = [
 			{
 				id: "Simple-Queue-Service",
 				name: "SQS",
-				description: " A fully managed message queuing service that makes it easy to decouple and scale microservices, distributed systems, and serverless applications. Amazon SQS moves data between distributed application components and helps you decouple these components.",
+				description: " A fully managed message queuing service that makes it easy to decouple and scale microservices, distributed systems, and serverless applications. It moves data between distributed application components and helps you decouple these components.",
 			},
 			{
 				id: "AppFlow",
@@ -124,7 +124,7 @@ export const servicesData: Category[] = [
 			{
 				id: "Cost-and-Usage-Report",
 				name: "Cost-and-Usage-Report",
-				description: "A servive that contains the most comprehensive set of AWS cost and usage data available, including additional metadata about AWS services, pricing, and reservations.",
+				description: "A service that contains the most comprehensive set of AWS cost and usage data available, including additional metadata about AWS services, pricing, and reservations.",
 			},
 			{
 				id: "Cost-Explorer",

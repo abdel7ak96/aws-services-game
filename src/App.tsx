@@ -1,8 +1,8 @@
 import Logo from "./assets/logo.png";
-import { servicesData } from "./constants/aws-services";
+import { type Category, servicesData } from "./constants/aws-services";
 import ServiceCircle from "./components/service-circle";
 import FloatingCard from "./components/floating-card";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import Footer from "./components/footer";
 import useStore from "./store";
 
@@ -14,24 +14,26 @@ function App() {
 	const [randomService, setRandomService] =
 		useState<(typeof servicesData)[number]["services"][number]>();
 
-	const flatServices = useMemo(
-		() => services.flatMap((service) => service.services),
-		[services],
-	);
-
-	useEffect(() => {
+	const setNewRandom = (services: Category[]) => {
+		const flatServices = services.flatMap((service) => service.services);
 		const randomIndex = Math.floor(Math.random() * flatServices.length);
 		const randomService = flatServices[randomIndex];
 		setRandomService(randomService);
-	}, [flatServices]);
+	};
 
 	const handleServiceClick = (i: number, j: number) => {
 		if (services[i].services[j].id === randomService?.id) {
 			const newServices = [...services];
 			newServices[i].services.splice(j, 1);
+			setNewRandom(newServices);
 			setServices(newServices);
 		}
+		setNewRandom(services);
 	};
+
+	useEffect(() => {
+		setNewRandom(services);
+	}, []);
 
 	return (
 		<div>
